@@ -1,6 +1,6 @@
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=openwrt-meetup-feed-test
+PKG_NAME:=openwrt-meetup-rust-experimentation
 PKG_VERSION:=1.0.0
 PKG_RELEASE:=1
 
@@ -13,18 +13,18 @@ PKG_BUILD_DEPENDS:=rust/host
 include $(INCLUDE_DIR)/package.mk
 include ../../packages/lang/rust/rust-package.mk
 
-define Package/openwrt-meetup-feed-test
+define Package/openwrt-meetup-rust-experimentation
   SECTION:=net
   # Select package by default
   #DEFAULT:=y
   CATEGORY:=Network
   TITLE:=OpenWrt Rust Experimentation
   DEPENDS:=$(RUST_ARCH_DEPENDS)
-  URL:=https://www.github.com/c03rad0r/openwrt-meetup-feed-test
+  URL:=https://www.github.com/c03rad0r/openwrt-meetup-rust-experimentation
   SUBMENU:=VPN
 endef
 
-define Package/openwrt-meetup-feed-test/description
+define Package/openwrt-meetup-rust-experimentation/description
   An experimental Rust package for OpenWrt.
 endef
 
@@ -40,17 +40,17 @@ endef
 
 # define Build/Configure
 # # Nothing to do here for us.
-# # By default openwrt-meetup-feed-test/src/Makefile will be used.
+# # By default openwrt-meetup-rust-experimentation/src/Makefile will be used.
 # endef
 
-# define Build/openwrt-meetup-feed-test/Compile
+# define Build/openwrt-meetup-rust-experimentation/Compile
 #   CFLAGS="$(TARGET_CFLAGS)" CPPFLAGS="$(TARGET_CPPFLAGS)" $(MAKE) -C $(PKG_BUILD_DIR) $(TARGET_CONFIGURE_OPTS)
 # endef
 
-# define Package/openwrt-meetup-feed-test/install
+# define Package/openwrt-meetup-rust-experimentation/install
 #   $(INSTALL_DIR) $(1)/usr/sbin
-#   $(INSTALL_BIN) $(PKG_BUILD_DIR)/openwrt-meetup-feed-test $(1)/usr/sbin/
+#   $(INSTALL_BIN) $(PKG_BUILD_DIR)/openwrt-meetup-rust-experimentation $(1)/usr/sbin/
 # endef
 
-$(eval $(call RustBinPackage,openwrt-meetup-feed-test))
-$(eval $(call BuildPackage,openwrt-meetup-feed-test))
+$(eval $(call RustBinPackage,openwrt-meetup-rust-experimentation))
+$(eval $(call BuildPackage,openwrt-meetup-rust-experimentation))
