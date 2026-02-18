@@ -631,7 +631,7 @@ to attach them to the start of each source file to most effectively
 state the exclusion of warranty; and each file should have at least
 the "copyright" line and a pointer to where the full notice is found.
 
-    TollGateFeed; OpenWRT feed for tooling that enables anyone to be an internet service provider
+    openwrt-meetup-feed-test; OpenWRT feed for tooling that enables anyone to be an internet service provider
     Copyright (C) 2024 nostr:npub1hw6amg8p24ne08c9gdq8hhpqx0t0pwanpae9z25crn7m9uy7yarse465gr nostr:npub14xz8l0zxkmqsjug3ahhpyddyy8ahp99rm30degnyzrc7qntmnu7srwd3w5 nostr:npub1zzt0d0s2f4lsanpd7nkjep5r79p7ljq7aw37eek64hf0ef6v0mxqgwljrv
 
 
@@ -653,7 +653,7 @@ Also add information on how to contact you by electronic and paper mail.
   If the program does terminal interaction, make it output a short
 notice like this when it starts in an interactive mode:
 
-    tollgate-feed  Copyright (C) 2024 nostr:npub1hw6amg8p24ne08c9gdq8hhpqx0t0pwanpae9z25crn7m9uy7yarse465gr nostr:npub14xz8l0zxkmqsjug3ahhpyddyy8ahp99rm30degnyzrc7qntmnu7srwd3w5 nostr:npub1zzt0d0s2f4lsanpd7nkjep5r79p7ljq7aw37eek64hf0ef6v0mxqgwljrv
+    openwrt-meetup-feed-test  Copyright (C) 2024 nostr:npub1hw6amg8p24ne08c9gdq8hhpqx0t0pwanpae9z25crn7m9uy7yarse465gr nostr:npub14xz8l0zxkmqsjug3ahhpyddyy8ahp99rm30degnyzrc7qntmnu7srwd3w5 nostr:npub1zzt0d0s2f4lsanpd7nkjep5r79p7ljq7aw37eek64hf0ef6v0mxqgwljrv
     This program comes with ABSOLUTELY NO WARRANTY; for details type `show w'.
     This is free software, and you are welcome to redistribute it
     under certain conditions; type `show c' for details.
