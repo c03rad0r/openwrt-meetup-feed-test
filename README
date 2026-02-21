@@ -17,7 +17,12 @@ Create index file './feeds/custom.index'
 WARNING: Makefile 'package/feeds/packages/alpine/Makefile' has a dependency on 'libcrypt-compat', which does not exist
 ```
 
+Check if the package is listed, it should be there now:
+```
+make menuconfig
+```
 
+Activate rust and the feed if they aren't already activated:
 ```
 (base) c03rad0r@CobradorWave:~/openwrt$ cat .config | grep "rust"
 # CONFIG_PACKAGE_kmod-keys-trusted is not set
@@ -26,5 +31,42 @@ CONFIG_PACKAGE_rust=y
 (base) c03rad0r@CobradorWave:~/openwrt$ cat .config | grep "meetup"
 CONFIG_PACKAGE_openwrt-meetup-feed-test=y
 (base) c03rad0r@CobradorWave:~/openwrt$ make package/openwrt-meetup-feed-test
+```
+
+Build the dependencies, later we can build just our package:
+```
+make -j $(nproc)
+ make[3] -C package/system/procd compile
+ make[3] -C package/boot/uboot-envtools compile
+ make[3] -C package/base-files compile
+ make[3] -C package/kernel/mac80211 compile
+ make[3] -C feeds/custom/openwrt-meetup-rust-experimentation compile
+    ERROR: package/feeds/custom/openwrt-meetup-rust-experimentation failed to build.
+make -r world: build failed. Please re-run make with -j1 V=s or V=sc for a higher verbosity level to see what's going on
+make: *** [/home/c03rad0r/openwrt/include/toplevel.mk:233: world] Error 1
+[1]+  Done                    emacs feeds/packages/utils/ripgrep/Makefile
+(reverse-i-search)`make': make package/openwrt-meetup-rust-experimentation V=99
+```
+
+Rust example that we can learn from:
+```
+emacs feeds/packages/utils/ripgrep/Makefile
+```
+
+
+This make command works:
+```
+make package/feeds/custom/openwrt-meetup-rust-experimentation/compile V=s
+```
+
+
+It works now!
+```
+root@OpenWrt:/tmp# opkg install openwrt-meetup-rust-experimentation_1.0.0-r1_mips_24kc.ipk 
+Installing openwrt-meetup-rust-experimentation (1.0.0-r1) to root...
+Configuring openwrt-meetup-rust-experimentation.
+root@OpenWrt:/tmp# openwrt-meetup-rust-experimentation 
+Hello, world!
+root@OpenWrt:/tmp# 
 ```
 
